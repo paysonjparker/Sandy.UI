@@ -2,10 +2,12 @@
     <p-table
         [value]="golfers"
         [paginator]="true"
-        [rows]="5"
+        [rows]="10"
         [showCurrentPageReport]="true"
+        [(selection)]="selectedGolfer"
+        selectionMode="single"
         [tableStyle]="{ 'min-width': '50rem' }"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} golfers"
         [rowsPerPageOptions]="[10, 25, 50]"
     >
         <ng-template pTemplate="header">
@@ -16,17 +18,11 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-golfer>
-            <tr>
+            <tr [pSelectableRow]="golfer" (click)="onSelectGolfer(golfer.id)">
                 <td>{{ golfer.name }}</td>
                 <td>{{ golfer.handicapIndex }}</td>
                 <td>{{ golfer.homeCourse }}</td>
             </tr>
-        </ng-template>
-        <ng-template pTemplate="paginatorleft">
-            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
-        </ng-template>
-        <ng-template pTemplate="paginatorright">
-            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
         </ng-template>
     </p-table>
 </div>

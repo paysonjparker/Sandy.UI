@@ -12,12 +12,21 @@ import { GolferTableComponent } from './core/components/golfer-table/golfer-tabl
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavigationBarComponent } from './core/components/navigation-bar/navigation-bar.component';
+import { MenubarModule } from 'primeng/menubar';
+import { GolferComponent } from './core/components/golfer/golfer.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GolferTableComponent
+    GolferTableComponent,
+    NavigationBarComponent,
+    GolferComponent,
+    EditGolferComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardModule,
     ButtonModule,
     BrowserAnimationsModule,
+    MenubarModule,
+    ConfirmDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
