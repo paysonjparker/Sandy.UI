@@ -1,3 +1,3 @@
 export const environments = {
-    sandyApiUrl: 'https://localhost:7182/api'
+    sandyApiUrl: 'https://localhost:7299/api'
 }

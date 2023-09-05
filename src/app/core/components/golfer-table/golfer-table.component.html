@@ -1,0 +1,32 @@
+<div class="card">
+    <p-table
+        [value]="golfers"
+        [paginator]="true"
+        [rows]="5"
+        [showCurrentPageReport]="true"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[10, 25, 50]"
+    >
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="name" style="width:25%">Name <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="handicapIndex" style="width:25%">Handicap Index <p-sortIcon field="handicapIndex"></p-sortIcon></th>
+                <th pSortableColumn="homeCourse" style="width:25%">Home Course <p-sortIcon field="homeCourse"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-golfer>
+            <tr>
+                <td>{{ golfer.name }}</td>
+                <td>{{ golfer.handicapIndex }}</td>
+                <td>{{ golfer.homeCourse }}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div>
