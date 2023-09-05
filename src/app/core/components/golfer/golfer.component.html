@@ -1,16 +1,20 @@
 <div class="h-100 d-flex align-items-center justify-content-center">
     <p-card header="{{golfer.name}}" subheader="{{golfer.homeCourse}}">
         <ng-template pTemplate="content">
-            <h4>Handicap Index: {{golfer.handicapIndex}}</h4>
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <h1>{{golfer.handicapIndex}}</h1>
+            </div>
         </ng-template>
         <ng-template pTemplate="footer">
-            <p-button (click)="onEditButtonClick()" label="Edit" icon="pi pi-pencil"></p-button>
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <p-button (click)="onEditButtonClick()" icon="pi pi-pencil" styleClass="p-button-help"></p-button>
             
-            <p-button (click)="onDeleteButtonClick()" label="Delete" icon="pi pi-trash" styleClass="p-button-danger" [style]="{ 'margin-left': '.5em' }"></p-button>
+                <p-button (click)="onDeleteButtonClick()"  icon="pi pi-trash" styleClass="p-button-danger" [style]="{ 'margin-left': '.5em' }"></p-button>
+            </div>
         </ng-template>
     </p-card>
     <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
 </div>
 <div class="h-100 d-flex align-items-center justify-content-center m-4">
-    <p-button (click)="onPostScoreButtonClick()" label="Post a Score" icon="pi pi-plus" styleClass="p-button-success"></p-button>
+    <p-button (click)="onPostScoreButtonClick()" label="Post a Score" icon="pi pi-plus" styleClass="p-button-info"></p-button>
 </div>

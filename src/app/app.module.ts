@@ -18,6 +18,8 @@ import { GolferComponent } from './core/components/golfer/golfer.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.component';
 import { AddScoreComponent } from './core/components/add-score/add-score.component';
+import { DividerModule } from 'primeng/divider';
+import { BadgeModule } from 'primeng/badge';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { AddScoreComponent } from './core/components/add-score/add-score.compone
     BrowserAnimationsModule,
     MenubarModule,
     ConfirmDialogModule,
+    DividerModule,
+    BadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
