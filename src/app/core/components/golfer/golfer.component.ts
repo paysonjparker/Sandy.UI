@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { Golfer } from '../../models/golfer';
 import { GolferService } from '../../services/golfer.service';
 
@@ -53,6 +53,7 @@ export class GolferComponent {
   }
 
   onPostScoreButtonClick(){
-    alert("You clicked the post score button")
+    var id = this.route.snapshot.params['Id'];
+    this.router.navigate(['addScore/' + id]);
   }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './core/components/home/home.component';
 import { GolferComponent } from './core/components/golfer/golfer.component';
 import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.component';
+import { AddScoreComponent } from './core/components/add-score/add-score.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'editGolfer/:Id',
     component: EditGolferComponent
+  },
+  {
+    path: 'addScore/:Id',
+    component: AddScoreComponent
   },
 ];
 

@@ -17,6 +17,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { GolferComponent } from './core/components/golfer/golfer.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.component';
+import { AddScoreComponent } from './core/components/add-score/add-score.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.c
     GolferTableComponent,
     NavigationBarComponent,
     GolferComponent,
-    EditGolferComponent
+    EditGolferComponent,
+    AddScoreComponent
   ],
   imports: [
     BrowserModule,
