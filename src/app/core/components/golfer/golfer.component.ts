@@ -61,4 +61,25 @@ export class GolferComponent {
     var id = this.route.snapshot.params['Id'];
     this.router.navigate(['addScore/' + id]);
   }
+
+  onDeleteScore(id: string){
+    var golferId = this.route.snapshot.params['Id'];
+
+    this.confirmationService.confirm({
+      message: 'Do you want to delete this score?',
+      header: 'Confirm Delete',
+      icon: 'pi pi-info-circle',
+      accept: () => {
+        this.scoreService.deleteScore(id).subscribe({
+          next: () => {
+            window.location.reload();
+            // this.messageService.add({ severity: 'error', summary: 'Successfully deleted:', detail: this.golfCourse.name});
+          },
+          error: (error) => {
+            console.log(error);
+          },
+        });
+      },
+    });
+  }
 }
