@@ -4,6 +4,8 @@ import { HomeComponent } from './core/components/home/home.component';
 import { GolferComponent } from './core/components/golfer/golfer.component';
 import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.component';
 import { AddScoreComponent } from './core/components/add-score/add-score.component';
+import { CreateGolferComponent } from './core/components/create-golfer/create-golfer.component';
+import { CreateGolfCourseComponent } from './core/components/create-golf-course/create-golf-course.component';
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'addScore/:Id',
     component: AddScoreComponent
+  },
+  {
+    path: 'createGolfer',
+    component: CreateGolferComponent
+  },
+  {
+    path: 'createGolfCourse',
+    component: CreateGolfCourseComponent
   },
 ];
 

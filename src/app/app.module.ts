@@ -20,6 +20,10 @@ import { EditGolferComponent } from './core/components/edit-golfer/edit-golfer.c
 import { AddScoreComponent } from './core/components/add-score/add-score.component';
 import { DividerModule } from 'primeng/divider';
 import { BadgeModule } from 'primeng/badge';
+import { MenuModule } from 'primeng/menu';
+import { CreateGolferComponent } from './core/components/create-golfer/create-golfer.component';
+import { CreateGolfCourseComponent } from './core/components/create-golf-course/create-golf-course.component';
+import { ToastModule } from 'primeng/toast';
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { BadgeModule } from 'primeng/badge';
     NavigationBarComponent,
     GolferComponent,
     EditGolferComponent,
-    AddScoreComponent
+    AddScoreComponent,
+    CreateGolferComponent,
+    CreateGolfCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,8 @@ import { BadgeModule } from 'primeng/badge';
     ConfirmDialogModule,
     DividerModule,
     BadgeModule,
+    MenuModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

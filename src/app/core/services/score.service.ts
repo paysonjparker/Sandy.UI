@@ -21,9 +21,12 @@ export class ScoreService {
       });
   }
 
-  public getScoreById(id : string) {
-    return this.http.get<Score>(this.sandyApiUrl + "/Scores/" + id);
-  };
+  public getScoresByGolferId(id : string, callback: (scores: Score[]) => void): void {
+    this.http.get<Score[]>(this.sandyApiUrl + "/Scores/" + id).
+      subscribe((scores: Score[]) => {
+        callback(scores);
+      });
+  }
 
   public deleteScore(id: string): Observable<void> {
     return this.http.delete<void>(this.sandyApiUrl + "/Scores/" + id);
@@ -36,3 +39,4 @@ export class ScoreService {
       });
   }
 }
+

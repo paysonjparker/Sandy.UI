@@ -12,11 +12,27 @@ export class NavigationBarComponent {
 
   ngOnInit() {
     this.items = [
-      // {
-      //   label: 'Home',
-      //   icon: 'pi pi-home',
-      //   routerLink: '/'
-      // }
+      {
+        label: 'Home',
+        icon: 'pi pi-home',
+        routerLink: '/',
+      },
+      {
+        label: 'Create',
+        icon: 'pi pi-plus',
+        items: [
+          {
+            label: 'Golfer',
+            icon: 'pi pi-user',
+            routerLink: 'createGolfer',
+          },
+          {
+            label: 'Golf Course',
+            icon: 'pi pi-flag',
+            routerLink: 'createGolfCourse',
+          }
+        ],
+      },
     ];
   }
 }

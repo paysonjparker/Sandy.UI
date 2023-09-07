@@ -3,12 +3,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { Golfer } from '../../models/golfer';
 import { GolferService } from '../../services/golfer.service';
+import { ScoreService } from '../../services/score.service';
+import { Score } from '../../models/score';
 
 @Component({
   selector: 'app-golfer',
   templateUrl: './golfer.component.html',
   styleUrls: ['./golfer.component.css'],
-  providers: [ConfirmationService, MessageService],
+  providers: [ConfirmationService],
 })
 export class GolferComponent {
   golfer: Golfer = {
@@ -19,13 +21,16 @@ export class GolferComponent {
     scores: [],
   };
 
-  constructor(private router: Router, private route: ActivatedRoute, private golferService: GolferService, private confirmationService: ConfirmationService, private messageService: MessageService) {
+  scores!: Score[];
+
+  constructor(private router: Router, private route: ActivatedRoute, private golferService: GolferService, private confirmationService: ConfirmationService, private scoreService: ScoreService) {
 
   }
 
   ngOnInit() {
     var id = this.route.snapshot.params['Id'];
     this.golferService.getGolferById(id).subscribe((golfer: Golfer) => this.golfer = golfer);
+    this.scoreService.getScoresByGolferId(id, (scores: Score[]) => this.scores = scores);
   }
 
   onDeleteButtonClick() {
